@@ -3,6 +3,11 @@ from app import app
 from app.forms import LoginForm
 
 @app.route('/')
+@app.route('/hello')
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name="dkaur1"):
+    return render_template('hello.html', name=name)
 @app.route('/index')
 def index():
     user = {'username': 'Miguel'}
